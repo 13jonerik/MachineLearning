@@ -14,8 +14,8 @@ J = 0;
 %               You should set J to the cost.
 
 newPrediction 	= X*theta; 			% calculate new prediction
-sqError 	= (newPrediction - y).^2;	% find the sqError of pred
-J 		= 1/(2*m) * sum(sqError);	% calculate the cost
+squaredError 	= (newPrediction - y).^2;	% find the sqError of pred
+J 		= 1/(2*m) * sum(squaredError);	% calculate the cost
 
 
 % =========================================================================

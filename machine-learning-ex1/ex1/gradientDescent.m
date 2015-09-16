@@ -26,7 +26,7 @@ for iter = 1:num_iters
 
     % update thetaZero and thetaOne simultaneously
     thetaZero = theta(1) - alpha * (1/m) * sum(hyp - y);
-    thetaOne  = theta(2) = alpha * (1/m) * sum((hyp - y) .* x);
+    thetaOne  = theta(2) - alpha * (1/m) * sum((hyp - y) .* x);
 
     % calc. theta and pass to computeCost function 
     theta = [thetaZero; thetaOne];
