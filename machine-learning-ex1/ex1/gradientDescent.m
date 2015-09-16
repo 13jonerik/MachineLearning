@@ -18,14 +18,24 @@ for iter = 1:num_iters
     %
 
 
+    % save vector x of all x(i) in training set
+    x = X(:,2);
 
+    % calculate the hypothesis on x
+    hyp = theta(1) + (theta(2)*x);
 
+    % update thetaZero and thetaOne simultaneously
+    thetaZero = theta(1) - alpha * (1/m) * sum(hyp - y);
+    thetaOne  = theta(2) = alpha * (1/m) * sum((hyp - y) .* x);
 
+    % calc. theta and pass to computeCost function 
+    theta = [thetaZero; thetaOne];
 
 
     % ============================================================
 
     % Save the cost J in every iteration    
+    
     J_history(iter) = computeCost(X, y, theta);
 
 end
