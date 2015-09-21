@@ -16,7 +16,7 @@ p = zeros(m, 1);
 %
 
 
-
+p = sigmoid(X * theta) >= 0.5; % compute prediction with threshold 0.5, predict 1 for >= 0.5
 
 
 

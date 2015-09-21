@@ -19,7 +19,15 @@ grad = zeros(size(theta));
 
 
 
+hyp = sigmoid(X * theta); % update hypothesis as usual
 
+tempTheta = theta(2:size(theta)); 
+
+thetaOne = [0;tempTheta];  % vectorize theta for cost function J
+
+J = (1/m) * (-y' * log(hyp) - (1 - y)' * log(1-hyp))+(lambda/(2*m)) * thetaOne' * thetaOne; % compute the cost for gradient descent
+
+grad = (1/m) * (X' * (hyp-y) + lambda * thetaOne); % set grad to partial deriv. of cost for theta
 
 
 % =============================================================
