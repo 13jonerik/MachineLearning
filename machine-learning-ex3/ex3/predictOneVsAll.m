@@ -31,9 +31,11 @@ X = [ones(m, 1) X];
 %       
 
 
+predict = sigmoid(X*all_theta'); % calc prediction for one vs all log. regression
 
+[predict_max, index_max] = max(predict, [], 2); % vectorize using max function
 
-
+p = index_max;  % update p
 
 
 % =========================================================================
