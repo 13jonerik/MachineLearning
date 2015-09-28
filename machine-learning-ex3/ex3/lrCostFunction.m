@@ -38,15 +38,19 @@ grad = zeros(size(theta));
 
 
 
+h = sigmoid(X * theta);   % update the hypothesis h for cost function
 
+thetaRegular = [0;theta(2:end, :);];  % regularization of theta
 
+J = (1/m) * (-y'* log(h) - (1 - y)' * log(1-h)) + (lambda/(2*m)) * thetaRegular' * thetaRegular;  % cost function for choice of theta
 
+grad = (1/m) * (X' * (h-y)+ lambda * thetaRegular ); % update gradient descent 
 
 
 
 
 % =============================================================
 
-grad = grad(:);
+% grad = grad(:);
 
 end
