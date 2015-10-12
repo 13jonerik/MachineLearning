@@ -15,7 +15,13 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+X_poly(:,1) = X;
 
+for i=2:p	% loop through p and compute the values of p-th power
+
+  X_poly(:,i) = X.*X_poly(:,i-1);
+
+end
 
 
 
