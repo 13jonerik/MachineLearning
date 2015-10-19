@@ -16,7 +16,9 @@ sim = 0;
 %
 %
 
+mag = sum((x1 - x2).^2);		% calc the magnitude for the sim function
 
+sim = e^(-mag / (2 * sigma^2) );	% calculate the similarity between x1, x2
 
 
 
